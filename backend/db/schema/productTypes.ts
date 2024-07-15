@@ -1,6 +1,6 @@
-import { mysqlTable, int, varchar } from 'drizzle-orm/mysql-core';
+import { sqliteTable, integer, text } from 'drizzle-orm/sqlite-core';
 
-const productType = mysqlTable('producttype', {
-  id: int('id').notNull().primaryKey(),
-  name: varchar('name', { length: 255 }).notNull(),
+export const productType = sqliteTable('producttype', {
+  id: integer('id').notNull().primaryKey(),
+  name: text('name', { length: 255 }).notNull(),
 });

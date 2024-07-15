@@ -1,9 +1,10 @@
-import { mysqlTable, int, varchar } from 'drizzle-orm/mysql-core';
-
-export const products = mysqlTable('products', {
-  id: varchar('id', { length: 255 }).notNull().primaryKey(),
-  name: varchar('name', { length: 255 }).notNull(),
-  buyPrice: int('buyPrice').notNull(),
-  sellPrice: int('sellPrice').notNull(),
-  quantity: int('quantity').notNull(),
+import { sqliteTable, integer, text } from 'drizzle-orm/sqlite-core';
+import {productType} from './productTypes'
+export const products = sqliteTable('products', {
+  id: text('id', { length: 255 }).notNull().primaryKey(),
+  name: text	('name', { length: 255 }).notNull(),
+  buyPrice: integer('buyPrice').notNull(),
+  sellPrice: integer('sellPrice').notNull(),
+  quantity: integer('quantity').notNull(),
+  productTypeId: integer('productTypeId').notNull().references(()=>productType.id),
 });
