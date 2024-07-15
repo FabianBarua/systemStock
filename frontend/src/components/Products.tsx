@@ -37,7 +37,7 @@ const fetchProducts = async ({
     query,
     currentPage
 }: fetchProductsParams): Promise<ProductResponseType> => {
-    const { data } = await axios.get(`http://192.168.100.38:3000/api/v1/products?query=${query}&currentPage=${currentPage}`);
+    const { data } = await axios.get(`https://system-stock.vercel.app/api/v1/products?query=${query}&currentPage=${currentPage}`);
     return data
 }
 
