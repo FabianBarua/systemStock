@@ -4,7 +4,7 @@ import { db } from '@db/index'
 import { count, like } from 'drizzle-orm'
 
 const router = express.Router()
-const productsPerPage = 20
+const productsPerPage = 10
 
 interface QueryParams {
   query: string
